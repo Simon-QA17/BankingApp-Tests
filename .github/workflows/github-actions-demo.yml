@@ -1,6 +1,14 @@
 name: Playwright Test Pipeline
 
-on: [push]
+on:
+  workflow_call:
+    inputs:
+      config-path:
+        required: true
+        type: string
+    secrets:
+      token:
+        required: false
 
 jobs:
   test:
